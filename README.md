@@ -13,18 +13,18 @@ How proc_pid_readdir function finds all running processes?
 
 It's using this magical function find_ge_pid, this function finds the first pid that is greater than or equal to the given one.
 
-From linux kernel sources documentation: 
+From the linux kernel source documentation: 
 find_ge_pid is used by proc to find the first pid that is greater than or equal to nr.
 
-We can infer that although this function is seperated from procfs, it was created for him and used only by him (I validated it).
+We can infer that although this function is separated from procfs, it was created for him and used only by him (I validated it).
 
 I decided to hook this function and when the next pid is a pid that we need to hide we will just skip the pid to next one.
 
 [More details about the hook can be found here](https://github.com/Rhydon1337/linux-kernel-ata-sniffer).
 
 ## Limitations
-1. It won't stop someone inside the kernel that will try to enumare it
-2. if we tried to hide {pid}, someone still able to access it directly from /proc/{pid}
+1. It won't stop someone inside the kernel that will try to enumerate it.
+2. If we tried to hide {pid}, someone still able to access it directly from /proc/{pid}.
 
 ## Usage
 cd linux-kernel-process-hider
