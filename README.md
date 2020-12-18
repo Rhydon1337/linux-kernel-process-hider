@@ -38,3 +38,5 @@ echo add {pid} > /dev/process_hider // hide {pid}
 cat /dev/process_hider // see all hidden pids
 
 echo del {pid} > /dev/process_hider // unhide {pid}
+
+DONE!!!

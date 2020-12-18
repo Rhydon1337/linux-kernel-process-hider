@@ -26,7 +26,7 @@ static const struct file_operations fops = {
 };
 
 static int process_hider_init(void) {	
-	int err;
+    int err;
     dev_t dev;
     printk(KERN_INFO "hello...\n");
     err = alloc_chrdev_region(&dev, 0, MINOR_VERSION, DEVICE_NAME);
