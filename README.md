@@ -7,7 +7,7 @@ Tested on linux kernel versions: 4.19.91, 5.4.0-48-generic.
 The compiled kernel options must include: CONFIG_KALLSYMS, CONFIG_HAVE_DYNAMIC_FTRACE, CONFIG_FTRACE, CONFIG_FUNCTION_TRACER. On most distros these options are default included.
 
 ## How it works
-When we do "ls" on /proc the function proc_pid_readdir from procfs is called, in this function procfs fill the pid sub directory (/proc/1 or /proc/2).
+When we do "ls" on /proc the function proc_pid_readdir from procfs is called, in this function procfs fills the pid sub directory (/proc/1 or /proc/2).
 
 How proc_pid_readdir function finds all running processes?
 
