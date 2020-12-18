@@ -14,7 +14,7 @@ How proc_pid_readdir function finds all running processes?
 It's using this magical function find_ge_pid, this function finds the first pid that is greater than or equal to the given one.
 
 From linux kernel sources documentation: 
-proc_pid_readdir is used by proc to find the first pid that is greater than or equal to nr.
+find_ge_pid is used by proc to find the first pid that is greater than or equal to nr.
 
 We can infer that although this function is seperated from procfs, it was created for him and used only by him (I validated it).
 
