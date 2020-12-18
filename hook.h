@@ -17,7 +17,6 @@ struct ftrace_hook {
     struct ftrace_ops ops;
 };
 
-
 int fh_install_hook(struct ftrace_hook *hook);
 
 void fh_remove_hook(struct ftrace_hook *hook);
