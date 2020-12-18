@@ -2,7 +2,7 @@ MODULENAME := process_hider
 
 obj-m += $(MODULENAME).o
 
-$(MODULENAME)-y += main.o device_handlers.o
+$(MODULENAME)-y += main.o device_handlers.o process_hide.o hook.o
 
 KERNELDIR ?= ~/workspace/buildroot-2020.02.4/output/build/linux-4.19.91
 

